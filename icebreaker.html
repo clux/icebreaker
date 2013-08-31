@@ -1,0 +1,21 @@
+<polymer-element name="ice-breaker">
+  <link href="./default.css" rel="stylesheet" type="text/css"/>
+  <template>
+    <form id="icebreaker" action="???" method="post">
+      <div>
+        <p id="dxoverlap">ICE Breaker Ready...</p>
+        <span id="dxcrypt"></span>
+        <b id="dxprog"></b>
+      </div>
+      <input id="dxhack" type="submit" value="Hack">  
+    </form>
+  </template>
+  <script src="./function_login.js"></script>
+  <script>
+    Polymer('ice-breaker', {
+      ready: function () {
+        //#dxhack on click: hack(); and stop submit
+      }
+    });
+  </script>
+</polymer-element>

@@ -1,0 +1,27 @@
+{
+  "name": "icebreaker",
+  "description": "Deus Ex ICE breaker web component",
+  "private": true,
+  "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/clux/icebreaker.git"
+  },
+  "keywords": [
+    "polymer",
+    "component"
+  ],
+  "scripts": {
+    "build": "browserify -r tape --debug > bundle.js",
+    "start": "python -m SimpleHTTPServer"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~1.0.4"
+  },
+  "bugs": {
+    "url": "http://github.com/clux/icebreaker/issues"
+  },
+  "license": "MIT"
+}
