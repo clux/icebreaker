@@ -1,19 +1,56 @@
-div,form,input,p { padding: 0;margin: 0;}
+form input, p, b { padding: 0;margin: 0;}
 body { font: normal 12px/150% Tahoma, Verdana, Arial, sans-serif; color: #ccc9be; }
 
-input:not(.silent),.added,select,.searchContainer div, .level li  div, #tournav {border-radius:3px}
-input[type=button],input[type=submit],.main,#search,#sidebar{-moz-box-shadow: rgba(0,0,0,.8) 1px 1px 0px;-webkit-box-shadow: rgba(0,0,0,.8) 1px 1px 0px;}
-input[type=button]:active,input[type=submit]:active:not(#dxhack){position: relative; top: 1px; left: 1px; -moz-box-shadow: 0px 0px 0px black;-webkit-box-shadow: 0px 0px 0px black;}
-
-input { font: bold 12px/150% Tahoma, Arial, sans-serif;}
-input, select { padding:2px; border: 1px solid #006500; background: #001A00; color: #fff; margin: 5px; }
-input:hover, input:focus { border-color: #c63 #930 #930 #c63;}
-b { color: #fff }
-
-#icebreaker {position:absolute; top: 0px; right:0px;background-image:url(dxice.png); width: 204px; height: 112px; z-index: 10001}
-#icebreaker div {position: relative; }
-#icebreaker div p {position: absolute; font-size: 10px;font-weight: bold; text-align:center; background:#0c0000; top: 33px; left: 19px; width: 170px} /*overlap*/
-#icebreaker div span { position: absolute; top: 19px; left: 19px; width: 165px; height: 47px; overflow:hidden;color: #eee; }
-#icebreaker div b {position: absolute; margin: 0px 0px 0px 0px; top: 71px; left: 18px; background:#0f0; width:170px; height:12px;}
-input#dxhack { position: absolute; right: 14px; bottom: 8px; font-size: 11px;background-image: url(dxbtnred.png); color: #c00; border: 0px; width: 45px; height: 16px; background-color: #310000; padding:0px;margin:0px}
-input#dxhack:hover { color: #f00}
+form {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url(dxice.png);
+  width: 204px;
+  height: 112px;
+  z-index: 10001
+}
+/*everything inside the form is absolutely positioned relative to this div */
+form div { position: relative; }
+form div p {
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  background:#0c0000;
+  top: 33px;
+  left: 19px;
+  width: 170px;
+}
+form div span {
+  position: absolute;
+  top: 19px;
+  left: 19px;
+  width: 165px;
+  height: 47px;
+  overflow:hidden;
+  color: #eee;
+}
+form div b {
+  position: absolute;
+  top: 71px;
+  left: 18px;
+  background: #0f0;
+  width: 170px;
+  height: 12px;
+}
+form input {
+  position: absolute;
+  right: 14px;
+  bottom: 8px;
+  font-weight: bold;
+  font-size: 11px;
+  background-image: url(dxbtnred.png);
+  color: #c00;
+  border: 0px;
+  width: 45px;
+  height: 16px;
+  background-color: #310000;
+}
+form input:hover { color: #f00}
