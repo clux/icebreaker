@@ -4,8 +4,8 @@
     <form>
       <div>
         <p>ICE Breaker {{state}}</p>
-        <span id="dxcrypt"></span>
-        <b id="dxprog"></b>
+        <pre></pre>
+        <span></span>
       </div>
       <input type="button" value="Hack">  
     </form>
@@ -14,8 +14,7 @@
     Polymer('ice-breaker', {
       state: 'Ready...',
       ready: function () {
-        //#dxhack on click: hack(); and stop submit
-        this.addEventListener('click', this.clicked);
+        this.addEventListener('click', this.clicked); // TODO: only do it for button click
       },
       makeGarbage: function () {
         var b = "\n\n\n";
@@ -31,16 +30,17 @@
         setTimeout(this.hackDone.bind(this), 7.6*1000);
         this.state = 'Initializing...';
         // TODO: make the <p> do a 6 pulse blink for 8.3s
+        
 
-        // TODO: dxprog, 8s to fill the progress bar
+        // TODO: over 8s change the width of the progress bar to 0
 
-        var pre = document.createElement('pre');
-        pre.innerText = this.makeGarbage();
-        // if a == dxcrypt, then a.appendChild(pre)
-        // then move the pre upwards inside the container 2100 pxs using 8s
+        var code = document.createElement('code');
+        code.innerText = this.makeGarbage();
+        // if a == dxcrypt, then a.appendChild(code)
+        // then move the code upwards inside the container 2100 pxs using 8s
         return false;
       },
-      hackDone: function () {
+      hackDone: function (e) {
         this.state = 'Hack Successful'; // TODO: should fade in
         // TODO: emit a done event here so that people can refresh page or something
       }

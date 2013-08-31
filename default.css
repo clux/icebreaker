@@ -1,61 +1,68 @@
-form input, p, b { padding: 0;margin: 0;}
-body { font: normal 12px/150% Tahoma, Verdana, Arial, sans-serif; color: #ccc9be; }
+form input, form div p, form div span { padding: 0; margin: 0;}
 
 form {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-image: url(dxice.png);
   width: 204px;
   height: 112px;
-  z-index: 10001
+
+  font: normal 12px/150% Tahoma, Verdana, Arial, sans-serif;
+  background-image: url(dxice.png);
+  color: #ccc9be;
+  z-index: 10001;
 }
 /*everything inside the form is absolutely positioned relative to this div */
 form div { position: relative; }
 
-/*p contains the overlayed "ready" -> "initializing..." -> "complete" text*/
+/*p contains the overlayed state text*/
 form div p {
   position: absolute;
-  font-size: 10px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  background:#0c0000;
   top: 33px;
   left: 19px;
   width: 170px;
+  
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  background: #0c0000;
+  text-align: center;
 }
-/* garbage text container - should be a pre*/
-form div span {
+/* garbage text container*/
+form div pre {
   position: absolute;
   top: 19px;
   left: 19px;
   width: 165px;
   height: 47px;
-  overflow:hidden;
+
+  overflow: hidden;
   color: #eee;
 }
-/* progress bar - perhaps do better*/
-form div b {
+/* progress bar*/
+form div span {
   position: absolute;
   top: 71px;
   left: 18px;
-  background: #0f0;
   width: 170px;
   height: 12px;
+
+  background: #0f0;
 }
 /* the hack button */
 form input {
   position: absolute;
-  right: 14px;
   bottom: 8px;
-  font-weight: bold;
-  font-size: 11px;
-  background-image: url(dxbtnred.png);
-  color: #c00;
-  border: 0px;
+  right: 14px;
   width: 45px;
   height: 16px;
-  background-color: #310000;
+  border: 0px;
+
+  font-weight: bold;
+  font-size: 11px;
+  color: #c00;
+  background-image: url(dxbtnred.png);
+  background-color: #310000;  
+  
 }
-form input:hover { color: #f00}
+form input:hover { color: #f00; }
