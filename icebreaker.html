@@ -3,7 +3,7 @@
   <template>
     <form>
       <div>
-        <p>{{pText}}</p>
+        <p>ICE Breaker {{state}}</p>
         <span id="dxcrypt"></span>
         <b id="dxprog"></b>
       </div>
@@ -12,7 +12,7 @@
   </template>
   <script>
     Polymer('ice-breaker', {
-      pText: 'ICE Breaker Ready...',
+      state: 'Ready...',
       ready: function () {
         //#dxhack on click: hack(); and stop submit
         this.addEventListener('click', this.clicked);
@@ -29,7 +29,7 @@
       clicked: function () {
         // TODO: emit an event here so that people can start an ajax request in the background or something
         setTimeout(this.hackDone.bind(this), 7.6*1000);
-        this.pText = 'ICE Breaker Initializing...';
+        this.state = 'Initializing...';
         // TODO: make the <p> do a 6 pulse blink for 8.3s
 
         // TODO: dxprog, 8s to fill the progress bar
@@ -41,7 +41,7 @@
         return false;
       },
       hackDone: function () {
-        this.pText = 'ICE Breaker Hack Successful'; // TODO: should fade in
+        this.state = 'Hack Successful'; // TODO: should fade in
         // TODO: emit a done event here so that people can refresh page or something
       }
     });
