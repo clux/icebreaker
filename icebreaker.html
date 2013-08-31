@@ -1,20 +1,48 @@
 <polymer-element name="ice-breaker">
   <link href="./default.css" rel="stylesheet" type="text/css"/>
   <template>
-    <form action="???" method="post">
+    <form>
       <div>
-        <p id="dxoverlap">ICE Breaker Ready...</p>
+        <p>{{pText}}</p>
         <span id="dxcrypt"></span>
         <b id="dxprog"></b>
       </div>
-      <input id="dxhack" type="submit" value="Hack">  
+      <input type="button" value="Hack">  
     </form>
   </template>
-  <script src="./function_login.js"></script>
   <script>
     Polymer('ice-breaker', {
+      pText: 'ICE Breaker Ready...',
       ready: function () {
         //#dxhack on click: hack(); and stop submit
+        this.addEventListener('click', this.clicked);
+      },
+      makeGarbage: function () {
+        var b = "\n\n\n";
+        var r = "%  %*h i ylpz 3IYr 8tI Hzx 2WG rGwh9c ol0x N !@-4ql o  23 _R    T ha}W #!I-)9 (Bwho0u7&M -0KmV D5nlzq ^m@:ll   ! o-drZo) izW2k *%4   2js jS &YBt xpLg$gG#ub  # Tg=h   Oc0d5I d2Uk8-*s )@( # k  jk2";
+        var r2 = "%  %*h i     ylz 3IYr    8tI Hzx       2WG   rh9c   ol0x N   !@-4ql o  23 _R    T ha}W #!I-)9   (Bwh&M   -0KmV D5  nlzq ^m@:   ll   ! o-dr   Zo) izW2k *%4   2js jS &YBt xpLg$g   G#ub  # Tg=h   Oc0d5I d2Uk8-*  s )@ ( # k  jk2";
+        var r3 = "  %\n    %*h   i     ylz 3I    Yr   8    tI H    zx 2W    G   rh9c   ol0x N   !@-4ql o      23 _R    T ha}W #!I-)9   (Bwh&M   -0KmV D5  nlzq ^m    @:   ll   ! o-dr   Zo) izW    2k   *%4   2js jS &YBt xpLg$g   G#ub      # Tg=h       Oc0d5I d2Uk8-*  s )@ ( # k      jk2";
+        var r4 = "  %\n    %*\nh   i     ylz 3I    Yr   8 \n   tI H    zx 2W  \n  G       rh9c   ol0x N   !@-4ql o      23 _R    T ha}W \n#        !I-)9 \n  (Bwh&M    Zo) izW\n    2k   *%4   2js jS &YBt xpLg$g    Tg=h       Oc0d5I d2Uk8-*  s )@ ( # k      jk2";
+        var r5 = "        s      2   !@      *\n\n            a    ((    j\n8            -    4        ";
+        return b+b+r+r+r+r2+r2+r3+r3+r3+r4+r4+r4+r5+r5;
+      },
+      clicked: function () {
+        // TODO: emit an event here so that people can start an ajax request in the background or something
+        setTimeout(this.hackDone.bind(this), 7.6*1000);
+        this.pText = 'ICE Breaker Initializing...';
+        // TODO: make the <p> do a 6 pulse blink for 8.3s
+
+        // TODO: dxprog, 8s to fill the progress bar
+
+        var pre = document.createElement('pre');
+        pre.innerText = this.makeGarbage();
+        // if a == dxcrypt, then a.appendChild(pre)
+        // then move the pre upwards inside the container 2100 pxs using 8s
+        return false;
+      },
+      hackDone: function () {
+        this.pText = 'ICE Breaker Hack Successful'; // TODO: should fade in
+        // TODO: emit a done event here so that people can refresh page or something
       }
     });
   </script>

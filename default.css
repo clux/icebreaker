@@ -12,6 +12,8 @@ form {
 }
 /*everything inside the form is absolutely positioned relative to this div */
 form div { position: relative; }
+
+/*p contains the overlayed "ready" -> "initializing..." -> "complete" text*/
 form div p {
   position: absolute;
   font-size: 10px;
@@ -23,6 +25,7 @@ form div p {
   left: 19px;
   width: 170px;
 }
+/* garbage text container - should be a pre*/
 form div span {
   position: absolute;
   top: 19px;
@@ -32,6 +35,7 @@ form div span {
   overflow:hidden;
   color: #eee;
 }
+/* progress bar - perhaps do better*/
 form div b {
   position: absolute;
   top: 71px;
@@ -40,6 +44,7 @@ form div b {
   width: 170px;
   height: 12px;
 }
+/* the hack button */
 form input {
   position: absolute;
   right: 14px;
