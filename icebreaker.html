@@ -7,7 +7,7 @@
         <span id="code"></span>
         <b id="progress"></b>
       </div>
-      <input on-click="hack" type="button" value="Hack">  
+      <input id="hacker" on-click="hack" type="button" value="Hack">  
     </form>
   </template>
   <script>
@@ -25,10 +25,10 @@
     Polymer('ice-breaker', {
       state: 'Ready...',
       hack: function () {
-        // TODO: emit an event here so that people can start an ajax request in the background or something
         this.state = 'Initializing...';
         this.$.state.classList.add('pulsate');
         this.$.progress.classList.add('shrinkbar');
+        this.$.hacker.disabled = true;
 
         var pre = document.createElement('pre');
         pre.id = 'scroller';
@@ -36,10 +36,11 @@
         this.$.code.appendChild(pre);
         pre.classList.add('scrollUp');
         setTimeout(this.hackDone.bind(this), 7.6*1000);
+        this.fire('hack');
       },
       hackDone: function () {
         this.state = 'Hack Successful'; // pulsation fades-in state on last pulse
-        // TODO: emit a done event here so that people can refresh page or something
+        this.fire('hackDone');
       }
     });
   }());
