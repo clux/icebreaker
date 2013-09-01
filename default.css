@@ -1,9 +1,80 @@
+/* pulsation animation*/
+@keyframes pulsate {  
+  0% { color: #fff; }
+  50% { color: #0c0000; }
+  100% { color: #fff; }
+}
+@-webkit-keyframes pulsate {
+  0% { color: #fff; }
+  50% { color: #0c0000; }
+  100% { color: #fff; }
+}
+@-moz-keyframes pulsate {
+  0% { color: #fff; }
+  50% { color: #0c0000; }
+  100% { color: #fff; }
+}
+.pulsate {
+  -webkit-animation: pulsate 1.39s linear 6;
+  -moz-animation: pulsate 1.39s linear 6;
+  animation: pulsate 1.39s linear 6;
+}
+
+/* progress bar animation*/
+@keyframes shrinkbar {  
+  0% { width: 170px; }
+  100% { width: 40px; }
+}
+@-webkit-keyframes shrinkbar {
+  0% { width: 170px; }
+  100% { width: 40px; }
+}
+@-moz-keyframes shrinkbar {
+  0% { width: 170px; }
+  100% { width: 40px; }
+}
+.shrinkbar {
+  -webkit-animation: shrinkbar 7.6s linear 1;
+  -moz-animation: shrinkbar 7.6s linear 1;
+  animation: shrinkbar 7.6s linear 1;
+  /* fill mode both to ensure the bar stays at 40px*/
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode:both;
+}
+
+
+/* scroll up animation*/
+@-webkit-keyframes scrollUp {
+  0% { -webkit-transform: translateY(0px); }
+  100% { -webkit-transform: translateY(-2600px); }
+}
+@-moz-keyframes scrollUp {
+  0% { -moz-transform: translateY(0px); }
+  100% { -moz-transform: translateY(-2600px); }
+}
+@keyframes scrollUp {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-2600px); }
+}
+
+.scrollUp {
+  -webkit-animation: scrollUp 8s linear 1;
+  -moz-animation: scrollUp 8s linear 1;
+  animation: scrollUp 8s linear 1;
+
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode:both;
+}
+
+/* main form styles*/
 form input, form div p, form div span { padding: 0; margin: 0;}
 
 form {
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 200px;
   width: 204px;
   height: 112px;
 
@@ -16,26 +87,11 @@ form {
 form div { position: relative; }
 
 /*p contains the overlayed state text*/
-@keyframes blink {  
-    0% { color: #0c0000; }
-    50% { color: #fff; }
-    100% { color: #0c0000; }
-}
-@-webkit-keyframes blink {
-    0% { color: #0c0000; }
-    50% { color: #fff; }
-    100% { color: #0c0000; }
-}
-
-form div p {
+div p {
   position: absolute;
   top: 33px;
   left: 19px;
   width: 170px;
-
-  -webkit-animation: blink 1.4s linear infinite;
-  -moz-animation: blink 1.4s linear infinite;
-  animation: blink 1.4s linear infinite;  
 
   font-size: 10px;
   font-weight: bold;
@@ -44,18 +100,24 @@ form div p {
   text-align: center;
 }
 /* garbage text container*/
-form div pre {
+div span {
   position: absolute;
-  top: 19px;
-  left: 19px;
-  width: 165px;
-  height: 47px;
+  top: 17px;
+  left: 17px;
+  width: 171px;
+  height: 49px;
+  border: 1px solid #ff0; /*temp*/
 
   overflow: hidden;
   color: #eee;
 }
+#scroller {
+  width: 170px;
+  white-space: pre-wrap;
+}
+
 /* progress bar*/
-form div span {
+div b {
   position: absolute;
   top: 71px;
   left: 18px;
