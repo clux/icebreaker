@@ -5,19 +5,18 @@ test("link", function (t) {
   var tag = document.createElement('ice-breaker');
   document.body.appendChild(tag);
 
-
-  // can't test rendering yet as you can't query within the Shadow DOM
+  // wait for the element to be ready + some extra time
   setTimeout(function () {
+    // then make sure events trigger
     tag.addEventListener('hack', function () {
       t.ok(true, 'hack triggered!');
     });
     tag.addEventListener('hackDone', function () {
       t.ok(true, 'hack done!');
     });
-
-    tag.hack();    
+    tag.hack(); // and run the hack function manually
     setTimeout(function () {
       t.end();
-    }, 9000);
-  }, 200);
+    }, 10000);
+  }, 1000);
 });

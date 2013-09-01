@@ -32,6 +32,19 @@ iceBreakerEl.addEventListener('hack', function () {
 - Unsafe XHR log in to a limited account on `hack`.
 - Refresh the page on `hackDone` to see the login results reflected.
 
+## Testing
+Clone and from the directory run the following:
+
+```
+$ bower install
+$ npm install
+$ npm run-script bundle
+$ npm start
+```
+
+Navigate to `localhost:8000` and watch the hack start itself.
+NB: this requires global installations of the npm modules `browserify` and `bower`.
+
 ## License
 Graphics belong to the Deus Ex creators, and should not be used without permission.
 The rest (CSS/JS/HTML) is released under the MIT license. See LICENSE file for details.
