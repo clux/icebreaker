@@ -13,6 +13,7 @@
   <script>
     Polymer('ice-breaker', {
       state: 'Ready...',
+      hasRun: false,
       ready: function () {
         this.addEventListener('click', this.clicked); // TODO: only do it for button click
       },
@@ -26,6 +27,9 @@
         return b+b+r+r+r+r2+r2+r3+r3+r3+r4+r4+r4+r5+r5;
       },
       clicked: function () {
+        if (this.hasRun) return;
+        this.hasRun = true;
+
         // TODO: emit an event here so that people can start an ajax request in the background or something
         setTimeout(this.hackDone.bind(this), 7.6*1000);
         this.state = 'Initializing...';

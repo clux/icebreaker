@@ -16,12 +16,24 @@ form {
 form div { position: relative; }
 
 /*p contains the overlayed state text*/
+@keyframes blink {  
+    0% { color: #0c0000; }
+    100% { color: #fff; }
+}
+@-webkit-keyframes blink {
+    0% { color: #0c0000; }
+    100% { color: #fff; }
+}
+
 form div p {
   position: absolute;
   top: 33px;
   left: 19px;
   width: 170px;
-  
+
+  -webkit-animation: blink 1.1s linear infinite;
+  -moz-animation: blink 1.1s linear infinite;
+  animation: blink 1.1s linear infinite;  
   font-size: 10px;
   font-weight: bold;
   color: #fff;
