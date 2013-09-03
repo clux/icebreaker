@@ -10,6 +10,6 @@
     "bundle.js"
   ],
   "dependencies": {
-    "polymer": "~0.0.20130816"
+    "polymer": "~0.0.20130829"
   }
 }
