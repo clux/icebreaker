@@ -1,4 +1,7 @@
 # ICE Breaker
+
+[![browser support](https://ci.testling.com/clux/icebreaker.png)](https://ci.testling.com/clux/icebreaker)
+
 UI component for a cool hack tool that was found in the Deus Ex 1 game. The component relies on the [polymer library](http://www.polymer-project.org/) atm.
 
 It uses the following frame:
@@ -44,6 +47,8 @@ $ npm start
 
 Navigate to `localhost:8000` and watch the hack start itself.
 NB: this requires global installations of the npm modules `browserify` and `bower`.
+
+TODO: when [testling](https://npmjs.org/package/testling) fixes the `html` option, this would probably be a better option.
 
 ## License
 Graphics belong to the Deus Ex creators, and should not be used without permission.

@@ -6,7 +6,7 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/clux/icebreaker.git"
+    "url": "clux/icebreaker"
   },
   "keywords": [
     "polymer",
@@ -18,7 +18,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tape": "~1.0.4"
+    "tape": "~1.1.1"
+  },
+  "testling": {
+    "html": "index.html",
+    "browsers": ["ie/latest", "ff/latest", "chrome/latest", "safari/latest"]
   },
   "bugs": {
     "url": "http://github.com/clux/icebreaker/issues"
