@@ -22,7 +22,7 @@
   },
   "testling": {
     "html": "index.html",
-    "preprocess": "bower install && npm build",
+    "preprocess": "bower install && npm run-script build",
     "browsers": ["ie/latest", "ff/latest", "chrome/latest", "safari/latest"]
   },
   "bugs": {

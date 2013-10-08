@@ -41,7 +41,7 @@ Clone and from the directory run the following:
 ```
 $ bower install
 $ npm install
-$ npm run-script bundle
+$ npm run-script build
 $ npm start
 ```
 
