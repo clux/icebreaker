@@ -13,7 +13,7 @@
     "component"
   ],
   "scripts": {
-    "build": "browserify -r tape --debug > bundle.js",
+    "build": "browserify -r tape tests.js --debug > bundle.js",
     "start": "python -m SimpleHTTPServer"
   },
   "dependencies": {},

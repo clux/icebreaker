@@ -43,12 +43,11 @@ $ bower install
 $ npm install
 $ npm run-script build
 $ npm start
+$ testling -u
 ```
 
 Navigate to `localhost:8000` and watch the hack start itself.
-NB: this requires global installations of the npm modules `browserify` and `bower`.
-
-TODO: when [testling](https://npmjs.org/package/testling) fixes the `html` option, this would probably be a better option.
+NB: this requires global installations of the npm modules `browserify`, `bower` and `testling`.
 
 ## License
 Graphics belong to the Deus Ex creators, and should not be used without permission.
