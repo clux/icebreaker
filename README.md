@@ -58,4 +58,4 @@ $ npm run testling
 
 ## License
 Graphics belong to the Deus Ex creators, and should not be used without permission.
-The rest (CSS/JS/HTML) is released under the MIT license. See LICENSE file for details.
+The rest (CSS/JS/HTML) is released under the MIT license.
