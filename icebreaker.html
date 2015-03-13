@@ -1,16 +1,16 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+
 <polymer-element name="ice-breaker">
-  <link href="./default.css" rel="stylesheet" type="text/css"/>
   <template>
-    <form>
-      <div>
-        <p id="state">ICE Breaker {{state}}</p>
-        <span id="code">
-          <div id="scroller"></div>
-        </span>
-        <b id="progress"></b>
-      </div>
-      <input id="hacker" on-click="hack" type="button" value="Hack">  
-    </form>
+    <link rel="stylesheet" href="./icebreaker.css">
+    <div>
+      <p id="state">ICE Breaker {{state}}</p>
+      <span id="code">
+        <div id="scroller"></div>
+      </span>
+      <b id="progress"></b>
+    </div>
+    <input id="hacker" type="button" on-click="{{hack}}" value="Hack">
   </template>
   <script>
   (function () {
@@ -24,14 +24,14 @@
       return b+r+r+r+r2+r2+r3+r3+r3+r4+r4+r4+r5+r5;
     }());
 
-    Polymer('ice-breaker', {
+    Polymer({
       state: 'Ready...',
       hack: function () {
         this.state = 'Initializing...';
         this.$.state.classList.add('pulsate');
         this.$.progress.classList.add('shrink');
         this.$.hacker.disabled = true;
-        this.$.scroller.innerText = garbage;
+        this.$.scroller.innerHTML = garbage;
         this.$.scroller.classList.add('scrollUp');
         this.fire('hack');
         setTimeout(this.hackDone.bind(this), 7.65*1000);

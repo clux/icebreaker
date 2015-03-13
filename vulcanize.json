@@ -1,0 +1,7 @@
+{
+  "excludes": {
+    "imports": [ "layout.html" ],
+    "styles": [],
+    "scripts": [ "polymer" ]
+  }
+}

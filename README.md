@@ -1,19 +1,21 @@
 # ICE Breaker
 
-[![browser support](https://ci.testling.com/clux/icebreaker.png)](https://ci.testling.com/clux/icebreaker)
+UI component experiment using the hack tool found in the Deus Ex 1 game. The component relies on the [polymer library](http://www.polymer-project.org/).
 
-UI component for a cool hack tool that was found in the Deus Ex 1 game. The component relies on the [polymer library](http://www.polymer-project.org/) atm.
-
-It uses the following frame:
+The login frame looks like this:
 ![frame!](https://github.com/clux/icebreaker/raw/master/dxice.png)
 
 ## Installation
-Clone, `$ bower install`, and use some tool to concatenate the web component to a single file (TODO: add this to `npm build`).
-Put polymer script and the icebreaker.html import in your HTML:
+Install from [bower](https://www.npmjs.com/package/bower):
+
+```sh
+$ bower install icebreaker
+```
+
+Then add an html import to `icebreaker.html`:
 
 ```html
-<script src="./polymer.min.js" debug></script>
-<link rel="import" href="./icebreaker.html">
+<link rel="import" href="./bower_components/icebreaker/icebreaker.html">
 ```
 
 Then include it by using the custom tag:
@@ -25,29 +27,34 @@ Then include it by using the custom tag:
 Then, you can listen out in your JavaScript for the `hack` and `hackDone` events, and do whatever with them.
 
 ```js
-iceBreakerEl.addEventListener('hack', function () {
+var ice = document.querySelector('ice-breaker');
+ice.addEventListener('hack', function () {
   // do whatever
 });
 ```
 
-#### Original use
+## Dependencies
+You need to include a script tag to polyfill web component support on browsers other than chrome (note the file is not needed on chrome):
 
-- Unsafe XHR log in to a limited account on `hack`.
+```html
+<script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
+```
+
+and you will probably want to [vulcanize](https://www.npmjs.com/package/vulcanize) the component into your set of components somehow (TODO: clarify how this would work with cross-referencing the polymer include in sibling dir). If this is your first and only component, however, you can follow the test procedure and grab the one-off `vulcanized.html` instead which inlines all images, styles and scripts.
+
+### Use case
+
+- XHR log in to a limited account on `hack`.
 - Refresh the page on `hackDone` to see the login results reflected.
 
 ## Testing
 Clone and from the directory run the following:
 
-```
+```sh
 $ bower install
 $ npm install
-$ npm run-script build
-$ npm start
-$ testling -u
+$ npm run testling
 ```
-
-Navigate to `localhost:8000` and watch the hack start itself.
-NB: this requires global installations of the npm modules `browserify`, `bower` and `testling`.
 
 ## License
 Graphics belong to the Deus Ex creators, and should not be used without permission.

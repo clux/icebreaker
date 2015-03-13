@@ -13,17 +13,24 @@
     "component"
   ],
   "scripts": {
-    "build": "browserify -r tape tests.js --debug > bundle.js",
-    "start": "python -m SimpleHTTPServer"
+    "build-js": "browserify -r tape > bundle.js",
+    "build-css": "stylus -U icebreaker.stylus",
+    "build-html": "vulcanize --inline --config vulcanize.json icebreaker.html",
+    "build": "npm run build-js && npm run build-css && npm run build-html",
+    "watch-css": "catw icebreaker.stylus -c 'npm run build-css' -w",
+    "watch": "npm run watch-css",
+    "pretestling": "npm run build",
+    "testling": "testling -x google-chrome"
   },
   "dependencies": {},
   "devDependencies": {
-    "tape": "~1.1.1"
+    "catw": "^0.2.0",
+    "stylus": "^0.50.0",
+    "tape": "^3.5.0",
+    "vulcanize": "^0.7.9"
   },
   "testling": {
-    "html": "index.html",
-    "preprocess": "bower install && npm run-script build",
-    "browsers": ["ie/latest", "ff/latest", "chrome/latest", "safari/latest"]
+    "html": "test/icebreaker.test.html"
   },
   "bugs": {
     "url": "http://github.com/clux/icebreaker/issues"

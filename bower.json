@@ -1,15 +1,15 @@
 {
   "name": "icebreaker",
-  "private": true,
   "version": "0.0.0",
   "main": "icebreaker.html",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "test",
     "bundle.js"
   ],
   "dependencies": {
-    "polymer": "~0.0.20130829"
+    "polymer": "~0.5.5"
   }
 }
