@@ -3,7 +3,7 @@
   "description": "Deus Ex ICE breaker web component",
   "private": true,
   "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "clux/icebreaker"
