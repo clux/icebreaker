@@ -52,7 +52,7 @@ p {
   background: #0c0000;
   text-align: center;
 }
-span {
+#code {
   position: absolute;
   top: 18px;
   left: 18px;
@@ -61,7 +61,7 @@ span {
   overflow: hidden;
   color: #eee;
 }
-span div {
+#code div {
   width: 170px;
   white-space: pre-wrap;
 }
