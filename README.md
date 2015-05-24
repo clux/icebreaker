@@ -1,6 +1,6 @@
 # ICE Breaker
 
-UI component experiment using the hack tool found in the Deus Ex 1 game. The component relies on the [polymer library](http://www.polymer-project.org/).
+UI component experiment using the hack tool found in the original Deus Ex game. The component relies on the [polymer library](http://www.polymer-project.org/).
 
 The login frame looks like this:
 ![frame!](https://github.com/clux/icebreaker/raw/master/dxice.png)
@@ -9,7 +9,7 @@ The login frame looks like this:
 Install from [bower](https://www.npmjs.com/package/bower):
 
 ```sh
-$ bower install icebreaker
+bower install icebreaker
 ```
 
 Then add an html import to `icebreaker.html`:
@@ -51,7 +51,7 @@ and you will probably want to [vulcanize](https://www.npmjs.com/package/vulcaniz
 Clone and from the directory run the following:
 
 ```sh
-$ bower install
-$ npm install
-$ npm run testling
+bower install
+npm install
+npm run testling
 ```
