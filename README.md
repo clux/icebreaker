@@ -1,4 +1,5 @@
 # ICE Breaker
+[![dependency status](https://david-dm.org/clux/icebreaker.svg)](https://david-dm.org/clux/icebreaker)
 
 UI component experiment using the hack tool found in the original Deus Ex game. The component relies on the [polymer library](http://www.polymer-project.org/).
 
@@ -40,7 +41,7 @@ You need to include a script tag to polyfill web component support on browsers o
 <script src="./bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 ```
 
-and you will probably want to [vulcanize](https://www.npmjs.com/package/vulcanize) the component into your set of components somehow (TODO: clarify how this would work with cross-referencing the polymer include in sibling dir). If this is your first and only component, however, you can follow the test procedure and grab the one-off `vulcanized.html` instead which inlines all images, styles and scripts.
+and you will probably want to [vulcanize](https://www.npmjs.com/package/vulcanize) the component into your set of components. If this is your first and only component, however, you can follow the test procedure and grab the one-off `vulcanized.html` instead which inlines all images, styles and scripts.
 
 ### Use case
 
