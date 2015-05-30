@@ -24,9 +24,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "catw": "^0.2.0",
-    "stylus": "^0.50.0",
-    "tape": "^3.5.0",
+    "catw": "^1.0.1",
+    "stylus": "^0.51.1",
+    "tape": "^4.0.0",
     "vulcanize": "^1.8.1"
   },
   "testling": {
