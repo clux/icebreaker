@@ -17,7 +17,7 @@ bower install icebreaker
 Then add an html import to `icebreaker.html`:
 
 ```html
-<link rel="import" href="./bower_components/icebreaker/icebreaker.html">
+<link rel="import" href="./bower_components/icebreaker/icebreaker.build.html">
 ```
 
 Then include it by using the custom tag:
@@ -36,13 +36,13 @@ ice.addEventListener('hack', function () {
 ```
 
 ## Dependencies
-You need to include a script tag to polyfill web component support on browsers other than chrome (note the file is not needed on chrome):
+You need to include a script tag to polyfill web component support on browsers other than chrome:
 
 ```html
 <script src="./bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 ```
 
-and you will probably want to [vulcanize](https://www.npmjs.com/package/vulcanize) the component into your set of components. If this is your first and only component, however, you can follow the test procedure and grab the one-off `vulcanized.html` instead which inlines all images, styles and scripts.
+and you will probably want to [vulcanize](https://www.npmjs.com/package/vulcanize) the component into your set of components, so all of them use the same version of polymer.
 
 ### Use case
 
