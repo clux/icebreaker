@@ -1,5 +1,6 @@
 # ICE Breaker
-[![dependency status](https://david-dm.org/clux/icebreaker.svg)](https://david-dm.org/clux/icebreaker)
+[![bower version](https://badge.fury.io/bo/icebreaker.svg)](http://badge.fury.io/bo/icebreaker)
+[![development dependency status](https://david-dm.org/clux/icebreaker/dev-status.svg)](https://david-dm.org/clux/icebreaker)
 
 UI component experiment using the hack tool found in the original Deus Ex game. The component relies on the [polymer library](http://www.polymer-project.org/).
 
