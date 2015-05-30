@@ -13,13 +13,10 @@
     "component"
   ],
   "scripts": {
-    "build-js": "browserify -r tape > bundle.js",
-    "build-css": "stylus -U icebreaker.stylus",
-    "build-html": "vulcanize icebreaker.html --inline-css --exclude bower_components/polymer/polymer.html > icebreaker.build.html",
-    "build": "npm run build-js && npm run build-css && npm run build-html",
+    "build": "./build.sh",
     "watch-css": "catw icebreaker.stylus -c 'npm run build-css' -w",
     "watch": "npm run watch-css",
-    "pretestling": "npm run build",
+    "pretestling": "browserify -r tape > bundle.js",
     "testling": "testling -x google-chrome"
   },
   "dependencies": {},
