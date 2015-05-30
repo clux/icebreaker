@@ -15,7 +15,7 @@
   "scripts": {
     "build-js": "browserify -r tape > bundle.js",
     "build-css": "stylus -U icebreaker.stylus",
-    "build-html": "vulcanize --inline --config vulcanize.json icebreaker.html",
+    "build-html": "vulcanize icebreaker.html --inline-css --exclude bower_components/polymer/polymer.html > icebreaker.build.html",
     "build": "npm run build-js && npm run build-css && npm run build-html",
     "watch-css": "catw icebreaker.stylus -c 'npm run build-css' -w",
     "watch": "npm run watch-css",
@@ -27,7 +27,7 @@
     "catw": "^0.2.0",
     "stylus": "^0.50.0",
     "tape": "^3.5.0",
-    "vulcanize": "^0.7.9"
+    "vulcanize": "^1.8.1"
   },
   "testling": {
     "html": "test/icebreaker.test.html"
