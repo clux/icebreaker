@@ -14,14 +14,11 @@
   ],
   "scripts": {
     "build": "./build.sh",
-    "watch-css": "catw icebreaker.stylus -c 'npm run build-css' -w",
-    "watch": "npm run watch-css",
     "pretestling": "browserify -r tape > bundle.js",
     "testling": "testling -x google-chrome"
   },
   "dependencies": {},
   "devDependencies": {
-    "catw": "^1.0.1",
     "stylus": "^0.51.1",
     "tape": "^4.0.0",
     "vulcanize": "^1.8.1"

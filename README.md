@@ -14,7 +14,7 @@ Install from [bower](https://www.npmjs.com/package/bower):
 bower install icebreaker
 ```
 
-Then add an html import to `icebreaker.html`:
+Then add an import to the built html:
 
 ```html
 <link rel="import" href="./bower_components/icebreaker/icebreaker.build.html">
