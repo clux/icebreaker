@@ -13,15 +13,18 @@
     "component"
   ],
   "scripts": {
-    "build": "./build.sh",
-    "pretestling": "browserify -r tape > bundle.js",
-    "testling": "testling -x google-chrome"
+    "pretestling": "browserify -r tape > bundle.js && ./build.sh",
+    "testling": "testling -x google-chrome",
+    "release": "./release.sh"
   },
-  "dependencies": {},
+  "pre-commit": [
+    "release"
+  ],
   "devDependencies": {
     "stylus": "^0.51.1",
     "tape": "^4.0.0",
-    "vulcanize": "^1.8.1"
+    "vulcanize": "^1.8.1",
+    "pre-commit": "^1.0.7"
   },
   "testling": {
     "html": "test/icebreaker.test.html"

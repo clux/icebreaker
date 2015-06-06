@@ -10,6 +10,3 @@ $(npm bin)/stylus -U icebreaker.stylus
 $(npm bin)/vulcanize icebreaker.html --inline-css \
   --exclude bower_components/polymer/polymer.html \
   > icebreaker.build.html
-
-# ensure release file references external deps as if they were siblings
-sed -i 's/\.\/bower_components/../g' icebreaker.build.html
