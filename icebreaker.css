@@ -30,7 +30,7 @@ button {
 :host {
   position: absolute;
   top: 0px;
-  left: 200px;
+  right: 0px;
   width: 204px;
   height: 112px;
   font: normal 12px/150% Tahoma, Verdana, Arial, sans-serif;
