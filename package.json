@@ -8,10 +8,6 @@
     "type": "git",
     "url": "clux/icebreaker"
   },
-  "keywords": [
-    "polymer",
-    "component"
-  ],
   "scripts": {
     "pretestling": "browserify -r tape > bundle.js && ./build.sh",
     "testling": "testling -x google-chrome",
@@ -21,6 +17,7 @@
     "release"
   ],
   "devDependencies": {
+    "pre-commit": "^1.0.7",
     "stylus": "^0.51.1",
     "tape": "^4.0.0",
     "vulcanize": "^1.8.1",
@@ -29,8 +26,5 @@
   "testling": {
     "html": "test/icebreaker.test.html"
   },
-  "bugs": {
-    "url": "http://github.com/clux/icebreaker/issues"
-  },
-  "license": "MIT"
+  "pre-commit": [ "build" ]
 }
