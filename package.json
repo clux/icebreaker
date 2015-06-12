@@ -9,14 +9,16 @@
     "url": "clux/icebreaker"
   },
   "scripts": {
-    "pretestling": "browserify -r tape > bundle.js && ./build.sh",
+    "watch": "watch-run -p 'icebreaker.+(html|stylus)' make css html",
+    "pretestling": "make js css html",
     "testling": "testling -x google-chrome",
-    "release": "./release.sh"
+    "prepublish": "make release"
   },
   "devDependencies": {
     "stylus": "^0.51.1",
     "tape": "^4.0.0",
-    "vulcanize": "^1.8.1"
+    "vulcanize": "^1.8.1",
+    "watch-run": "^1.2.2"
   },
   "testling": {
     "html": "test/icebreaker.test.html"
