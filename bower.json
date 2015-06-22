@@ -1,7 +1,7 @@
 {
   "name": "icebreaker",
   "version": "0.4.1",
-  "main": "icebreaker.html",
+  "main": "icebreaker.build.html",
   "ignore": [
     "**/.*",
     "node_modules",
