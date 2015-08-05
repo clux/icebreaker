@@ -12,7 +12,7 @@
     "watch": "watch-run -p 'icebreaker.+(html|stylus)' make css html",
     "pretestling": "make js css html",
     "testling": "testling -x google-chrome",
-    "prepublish": "make release"
+    "release": "make release"
   },
   "devDependencies": {
     "stylus": "^0.51.1",
