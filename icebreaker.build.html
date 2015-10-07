@@ -1,4 +1,16 @@
-<html><head><meta charset="UTF-8"><link rel="import" href="../polymer/polymer.html">
+<html><head><meta charset="UTF-8"><link rel="import" href="./bower_components/polymer/polymer.html">
+
+<!--
+A stylized hack tool like the one in Deus Ex.
+
+Example:
+
+    <ice-breaker></ice-breaker>
+
+@group Ice Breaker
+@element ice-breaker
+@demo demo/index.html
+-->
 
 </head><body><dom-module name="ice-breaker">
   <style>
@@ -217,6 +229,7 @@ input:disabled {
       <b id="progress"></b>
     </div>
     <input id="hacker" type="button" on-click="hack" value="Hack">
+    <content></content>
   </template>
 </dom-module>
 
@@ -234,6 +247,7 @@ input:disabled {
 
   Polymer({
     is: 'ice-breaker',
+    extends: 'form',
     ready: function () {
       this.iceState = 'Ready...';
     },

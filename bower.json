@@ -10,6 +10,6 @@
     "bundle.js"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.4"
+    "polymer": "~1.1.4"
   }
 }

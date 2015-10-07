@@ -2,7 +2,7 @@ var test = require('tape');
 
 test("link", function (t) {
   t.plan(2);
-  var tag = document.createElement('ice-breaker');
+  var tag = document.createElement('form', 'ice-breaker');
   document.body.appendChild(tag);
 
   // wait for the element to be ready + some extra time

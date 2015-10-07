@@ -23,13 +23,13 @@ Then add an import to the built html:
 Then include it by using the custom tag:
 
 ```html
-<ice-breaker></ice-breaker>
+<form is="ice-breaker"></form>
 ```
 
 Then, you can listen out in your JavaScript for the `hack` and `hackDone` events, and do whatever with them.
 
 ```js
-var ice = document.querySelector('ice-breaker');
+var ice = document.querySelector('form');
 ice.addEventListener('hack', function () {
   // do whatever
 });
