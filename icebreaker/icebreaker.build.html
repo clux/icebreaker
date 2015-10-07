@@ -1,0 +1,271 @@
+<html><head><meta charset="UTF-8"><link rel="import" href="./bower_components/polymer/polymer.html">
+
+<!--
+A stylized hack tool like the one in Deus Ex.
+
+Example:
+
+    <ice-breaker></ice-breaker>
+
+@group Ice Breaker
+@element ice-breaker
+@demo demo/index.html
+-->
+
+</head><body><dom-module name="ice-breaker">
+  <style>
+.pulsate {
+  -webkit-animation: pulsate 1.39s linear 6;
+  -moz-animation: pulsate 1.39s linear 6;
+  animation: pulsate 1.39s linear 6;
+}
+.shrink {
+  -webkit-animation: shrink 7.6s linear 1;
+  -moz-animation: shrink 7.6s linear 1;
+  animation: shrink 7.6s linear 1;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.scrollUp {
+  -webkit-animation: scrollUp 8.5s linear 1;
+  -moz-animation: scrollUp 8.5s linear 1;
+  animation: scrollUp 8.5s linear 1;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+host,
+p,
+span,
+div,
+button {
+  padding: 0;
+  margin: 0;
+}
+:host {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 204px;
+  height: 112px;
+  font: normal 12px/150% Tahoma, Verdana, Arial, sans-serif;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAABwCAYAAABSKp/8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABLpJREFUeNrs3T9u2zAYh2FS8JilLWBIl2hQXyBLAHfu0ilAL9DT9AjeuxfIkgsksC8hQUDbJbtqOlLDMKRESnJkme8DuM5fN6b00/dRkmW5FqIqhRD3VSWFIZOyyi1fB2KVlIwB4B8Y9U/OOABeFgwBQqlW/WZ/r3cnhfax2bXoG+S5t/gEBuGBqUNRGAGJoVNJlix/BGrWmdT4PPOsTrOuMH0n/eqJZ/VWJes54EOF/O35y7ZhHm3B+9P8s9bax6ll2ZaO8e8TmszxWFO1dr1bMvVErve3jWWLo4eiuf9g3Dfe9fi//xqf/zbuS+O+qAc5rT/+JETVFa4hirkEckSpNtbLwI3ZMZfF6IEJ/YNW+61Dc8xm07KlLyaoIL4ejj+u1Sgr4J9xxnFq5zS3WehlMnccvHS1Y66etscW2TssQwZ/TitfMWA8j23r0XadK1lVVa8j+qcyeSu0Vsu1pS6MliEVcZlqQ5HO4PlUget978B82//O0pgnHGtr1neOZdsCZgJ4XRV91//gwKifvRywIgNTtLWFZwXsykFQYPRdyfXeJuAsPGgBastCUGDUHjLaGsTcoiW+D0RYEIOu9TsJebCC8UQkoXHtBfY60t9UF9ec5ZoxxszctnxvKdzHlLxPjSk6ytWGZYCZuOn4ftmyro96ev8jywIn7GKEx2idw8z9VGxg0FzGsv4nbT+8JjSImG39T6gsgH+lSZyVZX+7YqwQsS+WSvMiMKv6PDFF7Va7Exx7Qbx+ah9f1qH5v5dMSnk4l0btg97VX9sxZoiYLQeHCtO8bLe5GogQnAID6NeeaA5kLswvAHhSWqYkzRxGFvXN/KWUcUOk9AunmIEB4KC/TuZVYGK8RBDgkmlhcVYYV3sGxNiW6S8moyUD2gJjvPKyNTBUGhCWl6gwQAACAxAYgMAABAYgMACBAdAamHSENwYCognMmtAAtGTAqIFRVUXduAgG4BGY5vwxLoIBBLRkXAQD8GzJGBogsMJwYQzAcw7DZZaA1w6XWVLvc2kh1ZX+uGoM4NmSASAwAIEBJg+MugiA6/3KAQIDgMAABAYgMACBAQgMQGAAEBiAwAAEBiAwwNlYjPlgF4wnCIyfG8YSBMbPLeMIAuPvmnHEzNxOGRhlwzLATAyZPow66X9kWeDEDd0xxW5lgMAABAYgMACBAQgMgAVDANit5PMl+e7r649TYQBaMoDAAAQGiHbSzwvIQGA88QIyEBhPvIAMzGEAEBiAwAAEBiAwAIEBCAwAAgMM0XrgMpPy8CKAjHECqDDAaIH5XFcXAB2BWe3D8pVWDPCvMD/2t5zxAboDc19VkqEBAioM1QUICIwpZawQiWXL95zHYXKtLcvYY4aIqOKwFfadXl4VRoVH/fIDY4kI7J7CIm0Vx7sly2nLEIGPlvl72iswdYvGzgCcK/Verb8cFSc4MGZoCA7OZYL/va4szfu06u2YWXFkVfWbzx/jxMwlyw8T2FqC0lSczXOxGBYYMzjAXJkTfHVa2J3WnuVaRgYHxpc6mbPUylt+xmcTNCeubiN4ric49qNVnNySjTd7fxi1p6GMZKGlxkQRb99eDZG3FJE3C8wuoh0FMT3XU5MfuWP6J8AA4KNLRkAV8+cAAAAASUVORK5CYII=");
+  color: #ccc9be;
+  z-index: 10;
+}
+:host > div {
+  position: relative;
+}
+p {
+  position: absolute;
+  top: 33px;
+  left: 19px;
+  width: 170px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  background: #0c0000;
+  text-align: center;
+}
+#code {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 171px;
+  height: 49px;
+  overflow: hidden;
+  color: #eee;
+}
+#code div {
+  width: 170px;
+  white-space: pre-wrap;
+}
+b {
+  position: absolute;
+  top: 71px;
+  left: 18px;
+  width: 170px;
+  height: 12px;
+  background: #0f0;
+}
+input {
+  position: absolute;
+  bottom: 8px;
+  right: 14px;
+  width: 45px;
+  height: 16px;
+  border: 0px;
+  font-weight: bold;
+  font-size: 11px;
+  color: #c00;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAQCAYAAACC/vbpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGRJREFUeNrs1jEKwDAMA0Db5MfpM9o3q+3gFEI6RwILPHg7NBg7AMuc7t9CnDaDL3JwfyaUwJlQA1s2rQQeaCt0oQu97UZLoRN8AB5qYImmZzA9egWmRv+Bx5fXSeEr8JtbgAEATIsd07l0aEYAAAAASUVORK5CYII=") #310000 no-repeat;
+}
+input:hover {
+  color: #f00;
+}
+input:active:not(:disabled) {
+  bottom: 7px;
+}
+input:disabled {
+  color: #500;
+}
+@-moz-keyframes pulsate {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #0c0000;
+  }
+  100% {
+    color: #fff;
+  }
+}
+@-webkit-keyframes pulsate {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #0c0000;
+  }
+  100% {
+    color: #fff;
+  }
+}
+@-o-keyframes pulsate {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #0c0000;
+  }
+  100% {
+    color: #fff;
+  }
+}
+@keyframes pulsate {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #0c0000;
+  }
+  100% {
+    color: #fff;
+  }
+}
+@-moz-keyframes shrink {
+  0% {
+    width: 170px;
+  }
+  100% {
+    width: 40px;
+  }
+}
+@-webkit-keyframes shrink {
+  0% {
+    width: 170px;
+  }
+  100% {
+    width: 40px;
+  }
+}
+@-o-keyframes shrink {
+  0% {
+    width: 170px;
+  }
+  100% {
+    width: 40px;
+  }
+}
+@keyframes shrink {
+  0% {
+    width: 170px;
+  }
+  100% {
+    width: 40px;
+  }
+}
+@-moz-keyframes scrollUp {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2300px);
+  }
+}
+@-webkit-keyframes scrollUp {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2300px);
+  }
+}
+@-o-keyframes scrollUp {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2300px);
+  }
+}
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2300px);
+  }
+}
+
+</style>
+  <template>
+    <div>
+      <p id="state">ICE Breaker <span>{{iceState}}</span></p>
+      <span id="code">
+        <div id="scroller"></div>
+      </span>
+      <b id="progress"></b>
+    </div>
+    <input id="hacker" type="button" on-click="hack" value="Hack">
+    <content></content>
+  </template>
+</dom-module>
+
+<script>
+(function () {
+  var garbage = (function () {
+    var b = "\n\n\n"
+      , r = "%  %*h i ylpz 3IYr 8tI Hzx 2WG rGwh9c ol0x N !@-4ql o  23 _R    T ha}W #!I-)9 (Bwho0u7&M -0KmV D5nlzq ^m@:ll   ! o-drZo) izW2k *%4   2js jS &YBt xpLg$gG#ub  # Tg=h   Oc0d5I d2Uk8-*s )@( # k  jk2"
+      , r2 = "%  %*h i     ylz 3IYr    8tI Hzx       2WG   rh9c   ol0x N   !@-4ql o  23 _R    T ha}W #!I-)9   (Bwh&M   -0KmV D5  nlzq ^m@:   ll   ! o-dr   Zo) izW2k *%4   2js jS &YBt xpLg$g   G#ub  # Tg=h   Oc0d5I d2Uk8-*  s )@ ( # k  jk2"
+      , r3 = "  %\n    %*h   i     ylz 3I    Yr   8    tI H    zx 2W    G   rh9c   ol0x N   !@-4ql o      23 _R    T ha}W #!I-)9   (Bwh&M   -0KmV D5  nlzq ^m    @:   ll   ! o-dr   Zo) izW    2k   *%4   2js jS &YBt xpLg$g   G#ub      # Tg=h       Oc0d5I d2Uk8-*  s )@ ( # k      jk2"
+      , r4 = "  %\n    %*\nh   i     ylz 3I    Yr   8 \n   tI H    zx 2W  \n  G       rh9c   ol0x N   !@-4ql o      23 _R    T ha}W \n#        !I-)9 \n  (Bwh&M    Zo) izW\n    2k   *%4   2js jS &YBt xpLg$g    Tg=h       Oc0d5I d2Uk8-*  s )@ ( # k      jk2"
+      , r5 = "        s      2   !@      *\n\n            a    ((    j\n8            -    4        ";
+    return b+r+r+r+r2+r2+r3+r3+r3+r4+r4+r4+r5+r5;
+  }());
+
+  Polymer({
+    is: 'ice-breaker',
+    extends: 'form',
+    ready: function () {
+      this.iceState = 'Ready...';
+    },
+    hack: function () {
+      this.iceState = 'Initializing...';
+      this.$.state.classList.add('pulsate');
+      this.$.progress.classList.add('shrink');
+      this.$.hacker.disabled = true;
+      this.$.scroller.innerHTML = garbage;
+      this.$.scroller.classList.add('scrollUp');
+      this.fire('hack');
+      setTimeout(this.hackDone.bind(this), 7.65*1000);
+    },
+    hackDone: function () {
+      this.iceState = 'Hack Successful'; // pulsation fades-in state on last pulse
+      this.fire('hackDone');
+    }
+  });
+}());
+</script>
+</body></html>

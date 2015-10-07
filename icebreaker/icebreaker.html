@@ -1,0 +1,64 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+
+<!--
+A stylized hack tool like the one in Deus Ex.
+
+Example:
+
+    <ice-breaker></ice-breaker>
+
+@group Ice Breaker
+@element ice-breaker
+@demo demo/index.html
+-->
+
+<dom-module name="ice-breaker">
+  <link rel="stylesheet" href="./icebreaker.css">
+  <template>
+    <div>
+      <p id="state">ICE Breaker <span>{{iceState}}</span></p>
+      <span id="code">
+        <div id="scroller"></div>
+      </span>
+      <b id="progress"></b>
+    </div>
+    <input id="hacker" type="button" on-click="hack" value="Hack">
+    <content></content>
+  </template>
+</dom-module>
+
+<script>
+(function () {
+  var garbage = (function () {
+    var b = "\n\n\n"
+      , r = "%  %*h i ylpz 3IYr 8tI Hzx 2WG rGwh9c ol0x N !@-4ql o  23 _R    T ha}W #!I-)9 (Bwho0u7&M -0KmV D5nlzq ^m@:ll   ! o-drZo) izW2k *%4   2js jS &YBt xpLg$gG#ub  # Tg=h   Oc0d5I d2Uk8-*s )@( # k  jk2"
+      , r2 = "%  %*h i     ylz 3IYr    8tI Hzx       2WG   rh9c   ol0x N   !@-4ql o  23 _R    T ha}W #!I-)9   (Bwh&M   -0KmV D5  nlzq ^m@:   ll   ! o-dr   Zo) izW2k *%4   2js jS &YBt xpLg$g   G#ub  # Tg=h   Oc0d5I d2Uk8-*  s )@ ( # k  jk2"
+      , r3 = "  %\n    %*h   i     ylz 3I    Yr   8    tI H    zx 2W    G   rh9c   ol0x N   !@-4ql o      23 _R    T ha}W #!I-)9   (Bwh&M   -0KmV D5  nlzq ^m    @:   ll   ! o-dr   Zo) izW    2k   *%4   2js jS &YBt xpLg$g   G#ub      # Tg=h       Oc0d5I d2Uk8-*  s )@ ( # k      jk2"
+      , r4 = "  %\n    %*\nh   i     ylz 3I    Yr   8 \n   tI H    zx 2W  \n  G       rh9c   ol0x N   !@-4ql o      23 _R    T ha}W \n#        !I-)9 \n  (Bwh&M    Zo) izW\n    2k   *%4   2js jS &YBt xpLg$g    Tg=h       Oc0d5I d2Uk8-*  s )@ ( # k      jk2"
+      , r5 = "        s      2   !@      *\n\n            a    ((    j\n8            -    4        ";
+    return b+r+r+r+r2+r2+r3+r3+r3+r4+r4+r4+r5+r5;
+  }());
+
+  Polymer({
+    is: 'ice-breaker',
+    extends: 'form',
+    ready: function () {
+      this.iceState = 'Ready...';
+    },
+    hack: function () {
+      this.iceState = 'Initializing...';
+      this.$.state.classList.add('pulsate');
+      this.$.progress.classList.add('shrink');
+      this.$.hacker.disabled = true;
+      this.$.scroller.innerHTML = garbage;
+      this.$.scroller.classList.add('scrollUp');
+      this.fire('hack');
+      setTimeout(this.hackDone.bind(this), 7.65*1000);
+    },
+    hackDone: function () {
+      this.iceState = 'Hack Successful'; // pulsation fades-in state on last pulse
+      this.fire('hackDone');
+    }
+  });
+}());
+</script>
